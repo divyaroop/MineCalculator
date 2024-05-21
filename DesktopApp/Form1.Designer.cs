@@ -31,11 +31,32 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
+            reviewButton = new Button();
             menu_toggle_btn = new Button();
             Reset_btn = new Button();
             MineLayingCalculation = new Label();
             Run_btn = new Button();
             sidePanel = new Panel();
+            MineFieldLayout_panel = new Panel();
+            button6 = new Button();
+            pictureBox9 = new PictureBox();
+            bottomSidePanel = new Panel();
+            button8 = new Button();
+            ParimeterPanel = new Panel();
+            button7 = new Button();
+            pictureBox8 = new PictureBox();
+            TPTPanel = new Panel();
+            button5 = new Button();
+            pictureBox6 = new PictureBox();
+            NiSignPanel = new Panel();
+            button4 = new Button();
+            pictureBox5 = new PictureBox();
+            NavigationPanel = new Panel();
+            button3 = new Button();
+            pictureBox4 = new PictureBox();
+            SettingPanel = new Panel();
+            button1 = new Button();
+            pictureBox3 = new PictureBox();
             AccessoriesPanel = new Panel();
             button2 = new Button();
             pictureBox2 = new PictureBox();
@@ -45,18 +66,36 @@
             sidebar_Timer = new System.Windows.Forms.Timer(components);
             panel2 = new Panel();
             mainPanel = new Panel();
+            pictureBox7 = new PictureBox();
+            toastTimer = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             sidePanel.SuspendLayout();
+            MineFieldLayout_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            bottomSidePanel.SuspendLayout();
+            ParimeterPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            TPTPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            NiSignPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            NavigationPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            SettingPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             AccessoriesPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             MineNavpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            mainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.DodgerBlue;
+            panel1.Controls.Add(reviewButton);
             panel1.Controls.Add(menu_toggle_btn);
             panel1.Controls.Add(Reset_btn);
             panel1.Controls.Add(MineLayingCalculation);
@@ -67,11 +106,25 @@
             panel1.Size = new Size(1319, 56);
             panel1.TabIndex = 0;
             // 
+            // reviewButton
+            // 
+            reviewButton.BackColor = Color.LimeGreen;
+            reviewButton.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            reviewButton.ForeColor = SystemColors.ButtonHighlight;
+            reviewButton.Location = new Point(863, 5);
+            reviewButton.Name = "reviewButton";
+            reviewButton.Size = new Size(143, 47);
+            reviewButton.TabIndex = 29;
+            reviewButton.Text = "Review";
+            reviewButton.UseVisualStyleBackColor = false;
+            reviewButton.Visible = false;
+            reviewButton.Click += reviewButton_Click_1;
+            // 
             // menu_toggle_btn
             // 
             menu_toggle_btn.BackgroundImage = (Image)resources.GetObject("menu_toggle_btn.BackgroundImage");
             menu_toggle_btn.BackgroundImageLayout = ImageLayout.Stretch;
-            menu_toggle_btn.Location = new Point(218, 5);
+            menu_toggle_btn.Location = new Point(7, 8);
             menu_toggle_btn.Margin = new Padding(3, 4, 3, 4);
             menu_toggle_btn.Name = "menu_toggle_btn";
             menu_toggle_btn.Size = new Size(46, 44);
@@ -98,12 +151,13 @@
             MineLayingCalculation.BackColor = Color.DarkBlue;
             MineLayingCalculation.Font = new Font("Tahoma", 20F, FontStyle.Bold, GraphicsUnit.Point);
             MineLayingCalculation.ForeColor = Color.WhiteSmoke;
-            MineLayingCalculation.Location = new Point(3, 3);
+            MineLayingCalculation.Location = new Point(59, 5);
             MineLayingCalculation.Name = "MineLayingCalculation";
             MineLayingCalculation.Padding = new Padding(3);
-            MineLayingCalculation.Size = new Size(197, 47);
+            MineLayingCalculation.Size = new Size(256, 47);
             MineLayingCalculation.TabIndex = 0;
-            MineLayingCalculation.Text = "Calculator";
+            MineLayingCalculation.Text = "Digi Recorder";
+            MineLayingCalculation.Click += MineLayingCalculation_Click;
             // 
             // Run_btn
             // 
@@ -121,6 +175,13 @@
             // sidePanel
             // 
             sidePanel.BackColor = Color.MintCream;
+            sidePanel.Controls.Add(MineFieldLayout_panel);
+            sidePanel.Controls.Add(bottomSidePanel);
+            sidePanel.Controls.Add(ParimeterPanel);
+            sidePanel.Controls.Add(TPTPanel);
+            sidePanel.Controls.Add(NiSignPanel);
+            sidePanel.Controls.Add(NavigationPanel);
+            sidePanel.Controls.Add(SettingPanel);
             sidePanel.Controls.Add(AccessoriesPanel);
             sidePanel.Controls.Add(MineNavpanel);
             sidePanel.Dock = DockStyle.Left;
@@ -131,15 +192,279 @@
             sidePanel.Size = new Size(222, 740);
             sidePanel.TabIndex = 1;
             // 
+            // MineFieldLayout_panel
+            // 
+            MineFieldLayout_panel.BackColor = Color.Transparent;
+            MineFieldLayout_panel.Controls.Add(button6);
+            MineFieldLayout_panel.Controls.Add(pictureBox9);
+            MineFieldLayout_panel.Location = new Point(7, 503);
+            MineFieldLayout_panel.Margin = new Padding(3, 4, 3, 4);
+            MineFieldLayout_panel.Name = "MineFieldLayout_panel";
+            MineFieldLayout_panel.Size = new Size(208, 63);
+            MineFieldLayout_panel.TabIndex = 7;
+            MineFieldLayout_panel.Visible = false;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.Transparent;
+            button6.BackgroundImageLayout = ImageLayout.Stretch;
+            button6.FlatAppearance.BorderSize = 0;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold, GraphicsUnit.Point);
+            button6.Location = new Point(56, 0);
+            button6.Margin = new Padding(0);
+            button6.Name = "button6";
+            button6.Size = new Size(150, 59);
+            button6.TabIndex = 1;
+            button6.Text = "Mine Field Layout";
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += MineFieldLayout_click;
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
+            pictureBox9.InitialImage = (Image)resources.GetObject("pictureBox9.InitialImage");
+            pictureBox9.Location = new Point(3, 0);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(51, 59);
+            pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox9.TabIndex = 0;
+            pictureBox9.TabStop = false;
+            // 
+            // bottomSidePanel
+            // 
+            bottomSidePanel.BackColor = Color.Transparent;
+            bottomSidePanel.BorderStyle = BorderStyle.FixedSingle;
+            bottomSidePanel.Controls.Add(button8);
+            bottomSidePanel.Dock = DockStyle.Bottom;
+            bottomSidePanel.Location = new Point(0, 683);
+            bottomSidePanel.Name = "bottomSidePanel";
+            bottomSidePanel.Size = new Size(222, 57);
+            bottomSidePanel.TabIndex = 8;
+            bottomSidePanel.Visible = false;
+            // 
+            // button8
+            // 
+            button8.BackgroundImage = (Image)resources.GetObject("button8.BackgroundImage");
+            button8.BackgroundImageLayout = ImageLayout.Stretch;
+            button8.Location = new Point(7, 8);
+            button8.Margin = new Padding(3, 4, 3, 4);
+            button8.Name = "button8";
+            button8.Size = new Size(46, 44);
+            button8.TabIndex = 30;
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += TemplateEditor_Click;
+            // 
+            // ParimeterPanel
+            // 
+            ParimeterPanel.BackColor = Color.Transparent;
+            ParimeterPanel.Controls.Add(button7);
+            ParimeterPanel.Controls.Add(pictureBox8);
+            ParimeterPanel.Location = new Point(3, 361);
+            ParimeterPanel.Margin = new Padding(3, 4, 3, 4);
+            ParimeterPanel.Name = "ParimeterPanel";
+            ParimeterPanel.Size = new Size(208, 63);
+            ParimeterPanel.TabIndex = 6;
+            ParimeterPanel.Visible = false;
+            // 
+            // button7
+            // 
+            button7.BackColor = Color.Transparent;
+            button7.BackgroundImageLayout = ImageLayout.Stretch;
+            button7.FlatAppearance.BorderSize = 0;
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold, GraphicsUnit.Point);
+            button7.Location = new Point(56, 0);
+            button7.Margin = new Padding(0);
+            button7.Name = "button7";
+            button7.Size = new Size(150, 59);
+            button7.TabIndex = 1;
+            button7.Text = "Perimeter Marking Store";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += ParimeterNab_Click;
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
+            pictureBox8.InitialImage = (Image)resources.GetObject("pictureBox8.InitialImage");
+            pictureBox8.Location = new Point(3, 0);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(51, 59);
+            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox8.TabIndex = 0;
+            pictureBox8.TabStop = false;
+            pictureBox8.Click += pictureBox8_Click;
+            // 
+            // TPTPanel
+            // 
+            TPTPanel.BackColor = Color.Transparent;
+            TPTPanel.Controls.Add(button5);
+            TPTPanel.Controls.Add(pictureBox6);
+            TPTPanel.Location = new Point(3, 432);
+            TPTPanel.Margin = new Padding(3, 4, 3, 4);
+            TPTPanel.Name = "TPTPanel";
+            TPTPanel.Size = new Size(208, 63);
+            TPTPanel.TabIndex = 6;
+            TPTPanel.Visible = false;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.Transparent;
+            button5.BackgroundImageLayout = ImageLayout.Stretch;
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.Location = new Point(56, 0);
+            button5.Margin = new Padding(0);
+            button5.Name = "button5";
+            button5.Size = new Size(150, 59);
+            button5.TabIndex = 1;
+            button5.Text = "TPT";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += TPT_Click;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.InitialImage = (Image)resources.GetObject("pictureBox6.InitialImage");
+            pictureBox6.Location = new Point(3, 0);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(51, 59);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.TabIndex = 0;
+            pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click;
+            // 
+            // NiSignPanel
+            // 
+            NiSignPanel.BackColor = Color.Transparent;
+            NiSignPanel.Controls.Add(button4);
+            NiSignPanel.Controls.Add(pictureBox5);
+            NiSignPanel.Location = new Point(3, 295);
+            NiSignPanel.Margin = new Padding(3, 4, 3, 4);
+            NiSignPanel.Name = "NiSignPanel";
+            NiSignPanel.Size = new Size(208, 63);
+            NiSignPanel.TabIndex = 5;
+            NiSignPanel.Visible = false;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.Transparent;
+            button4.BackgroundImageLayout = ImageLayout.Stretch;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.Location = new Point(56, 0);
+            button4.Margin = new Padding(0);
+            button4.Name = "button4";
+            button4.Size = new Size(150, 59);
+            button4.TabIndex = 1;
+            button4.Text = "NI Sign BDS";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += NIStoreNav_Click;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.InitialImage = (Image)resources.GetObject("pictureBox5.InitialImage");
+            pictureBox5.Location = new Point(3, 0);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(51, 59);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 0;
+            pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
+            // 
+            // NavigationPanel
+            // 
+            NavigationPanel.BackColor = Color.Transparent;
+            NavigationPanel.Controls.Add(button3);
+            NavigationPanel.Controls.Add(pictureBox4);
+            NavigationPanel.Location = new Point(3, 230);
+            NavigationPanel.Margin = new Padding(3, 4, 3, 4);
+            NavigationPanel.Name = "NavigationPanel";
+            NavigationPanel.Size = new Size(208, 63);
+            NavigationPanel.TabIndex = 4;
+            NavigationPanel.Visible = false;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.Transparent;
+            button3.BackgroundImageLayout = ImageLayout.Stretch;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Location = new Point(56, 0);
+            button3.Margin = new Padding(0);
+            button3.Name = "button3";
+            button3.Size = new Size(150, 59);
+            button3.TabIndex = 1;
+            button3.Text = "Navigation Store";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += NavigationNav_Click;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.InitialImage = (Image)resources.GetObject("pictureBox4.InitialImage");
+            pictureBox4.Location = new Point(3, 0);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(51, 59);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 0;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
+            // 
+            // SettingPanel
+            // 
+            SettingPanel.BackColor = Color.Transparent;
+            SettingPanel.Controls.Add(button1);
+            SettingPanel.Controls.Add(pictureBox3);
+            SettingPanel.Location = new Point(3, 159);
+            SettingPanel.Margin = new Padding(3, 4, 3, 4);
+            SettingPanel.Name = "SettingPanel";
+            SettingPanel.Size = new Size(208, 63);
+            SettingPanel.TabIndex = 3;
+            SettingPanel.Visible = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Transparent;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(56, 0);
+            button1.Margin = new Padding(0);
+            button1.Name = "button1";
+            button1.Size = new Size(150, 59);
+            button1.TabIndex = 1;
+            button1.Text = "Setting Out Store";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += SettingNav_Click;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.InitialImage = (Image)resources.GetObject("pictureBox3.InitialImage");
+            pictureBox3.Location = new Point(3, 0);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(51, 59);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 0;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
+            // 
             // AccessoriesPanel
             // 
             AccessoriesPanel.Controls.Add(button2);
             AccessoriesPanel.Controls.Add(pictureBox2);
-            AccessoriesPanel.Location = new Point(8, 87);
+            AccessoriesPanel.Location = new Point(6, 87);
             AccessoriesPanel.Margin = new Padding(3, 4, 3, 4);
             AccessoriesPanel.Name = "AccessoriesPanel";
             AccessoriesPanel.Size = new Size(205, 64);
             AccessoriesPanel.TabIndex = 3;
+            AccessoriesPanel.Visible = false;
             // 
             // button2
             // 
@@ -148,14 +473,14 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(50, 0);
+            button2.Location = new Point(50, -1);
             button2.Margin = new Padding(0);
             button2.Name = "button2";
             button2.Size = new Size(153, 59);
             button2.TabIndex = 1;
             button2.Text = "Accessories";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            button2.Click += AccessoriesNav_Click;
             // 
             // pictureBox2
             // 
@@ -167,6 +492,7 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // MineNavpanel
             // 
@@ -193,7 +519,7 @@
             MineCalculation_btn.TabIndex = 1;
             MineCalculation_btn.Text = "Mine Calculation ";
             MineCalculation_btn.UseVisualStyleBackColor = false;
-            MineCalculation_btn.Click += button1_Click;
+            MineCalculation_btn.Click += MineNav_Click;
             // 
             // pictureBox1
             // 
@@ -205,6 +531,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // sidebar_Timer
             // 
@@ -223,11 +550,33 @@
             // 
             // mainPanel
             // 
+            mainPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            mainPanel.BackColor = SystemColors.Control;
+            mainPanel.Controls.Add(pictureBox7);
             mainPanel.Location = new Point(0, 0);
             mainPanel.Margin = new Padding(3, 4, 3, 4);
             mainPanel.Name = "mainPanel";
             mainPanel.Size = new Size(1097, 740);
             mainPanel.TabIndex = 0;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox7.BackColor = Color.Transparent;
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.InitialImage = (Image)resources.GetObject("pictureBox7.InitialImage");
+            pictureBox7.Location = new Point(342, 188);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(29, 34);
+            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox7.TabIndex = 0;
+            pictureBox7.TabStop = false;
+            pictureBox7.Visible = false;
+            pictureBox7.Click += pictureBox7_Click_1;
+            // 
+            // toastTimer
+            // 
+            toastTimer.Tick += timer1_Tick;
             // 
             // Form1
             // 
@@ -242,15 +591,30 @@
             HelpButton = true;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "DesktopApp";
+            Text = "Digi Recorder";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             sidePanel.ResumeLayout(false);
+            MineFieldLayout_panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            bottomSidePanel.ResumeLayout(false);
+            ParimeterPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            TPTPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            NiSignPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            NavigationPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            SettingPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             AccessoriesPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             MineNavpanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
+            mainPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ResumeLayout(false);
         }
 
@@ -272,5 +636,28 @@
         private System.Windows.Forms.Timer sidebar_Timer;
         private Panel panel2;
         private Panel mainPanel;
+        private Panel SettingPanel;
+        private Button button1;
+        private PictureBox pictureBox3;
+        private Panel TPTPanel;
+        private Button button5;
+        private PictureBox pictureBox6;
+        private Panel NiSignPanel;
+        private Button button4;
+        private PictureBox pictureBox5;
+        private Panel NavigationPanel;
+        private Button button3;
+        private PictureBox pictureBox4;
+        private Panel ParimeterPanel;
+        private Button button7;
+        private PictureBox pictureBox8;
+        private Panel bottomSidePanel;
+        private Button button8;
+        private PictureBox pictureBox7;
+        private System.Windows.Forms.Timer toastTimer;
+        private Button reviewButton;
+        private Panel MineFieldLayout_panel;
+        private Button button6;
+        private PictureBox pictureBox9;
     }
 }

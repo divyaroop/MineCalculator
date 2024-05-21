@@ -56,9 +56,9 @@
             label1.Location = new Point(24, 18);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(139, 27);
+            label1.Size = new Size(183, 27);
             label1.TabIndex = 0;
-            label1.Text = "Accessroies";
+            label1.Text = "ACCESSORIES";
             // 
             // woodenPeg
             // 

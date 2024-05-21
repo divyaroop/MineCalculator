@@ -21,18 +21,19 @@ namespace DesktopApp.UserControls
         }
         public void CalculateAccessories()
         {
-            if (sharedDataModel != null && sharedDataModel.IsMineCalculated) {
-                WoodenPegFrag_Lbl.Text=(sharedDataModel.M_16_frag * 2 ).ToString();
-                ALDS_lbl.Text=(sharedDataModel.Anti_Tank_Mines*0.1).ToString();
-                Switch_lbl.Text=(sharedDataModel.Anti_Tank_Mines * 0.1).ToString()+" Nos";
-                Snouts_lbl.Text=(sharedDataModel.Anti_Tank_Mines * 0.1).ToString();
-                detonator_lbl.Text=(sharedDataModel.Anti_Tank_Mines * 0.1 *2).ToString();
-                GcSlabs_Lbl.Text=(sharedDataModel.Anti_Tank_Mines * 0.1).ToString();
-                JnCLips_lbl.Text=(sharedDataModel.Anti_Tank_Mines * 0.1).ToString();
-                DetonationCord_lbl.Text=(sharedDataModel.Anti_Tank_Mines * 0.1 * 2).ToString()+" M";
-                SealingCaps_lbl.Text=(sharedDataModel.Anti_Tank_Mines * 0.1* 2).ToString()+" Nos";
+            if (sharedDataModel != null && sharedDataModel.IsMineCalculated)
+            {
+                WoodenPegFrag_Lbl.Text = (sharedDataModel.M_16_frag * 2).ToString() + " Nos";
+                ALDS_lbl.Text = (sharedDataModel.Anti_Tank_Mines * 0.1).ToString() + " Nos";
+                Switch_lbl.Text = (sharedDataModel.Anti_Tank_Mines * 0.1).ToString() + " Nos";
+                Snouts_lbl.Text = (sharedDataModel.Anti_Tank_Mines * 0.1).ToString() + " Nos";
+                detonator_lbl.Text = (sharedDataModel.Anti_Tank_Mines * 0.1 * 2).ToString() + " Nos";
+                GcSlabs_Lbl.Text = (sharedDataModel.Anti_Tank_Mines * 0.1).ToString() + " Nos";
+                JnCLips_lbl.Text = (sharedDataModel.Anti_Tank_Mines * 0.1).ToString() + " Nos";
+                DetonationCord_lbl.Text = (sharedDataModel.Anti_Tank_Mines * 0.1 * 2).ToString() + " M";
+                SealingCaps_lbl.Text = (sharedDataModel.Anti_Tank_Mines * 0.1 * 2).ToString() + " Nos";
             }
         }
-        
+
     }
 }

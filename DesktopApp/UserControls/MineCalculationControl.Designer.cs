@@ -1,4 +1,5 @@
-﻿using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+﻿using DesktopApp.Model;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace DesktopApp.UserControls
 {
@@ -31,6 +32,9 @@ namespace DesktopApp.UserControls
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DropDownModel dropDownModel1 = new DropDownModel();
+            DropDownModel dropDownModel2 = new DropDownModel();
+            DropDownModel dropDownModel3 = new DropDownModel();
             label1 = new Label();
             frontage_tb = new TextBox();
             label2 = new Label();
@@ -76,10 +80,30 @@ namespace DesktopApp.UserControls
             label6 = new Label();
             panel4 = new Panel();
             panel5 = new Panel();
-            Rate_of_Laying_tb = new TextBox();
+            errorProvider = new ErrorProvider(components);
             label22 = new Label();
             panel9 = new Panel();
-            errorProvider = new ErrorProvider(components);
+            Depth_tb = new TextBox();
+            label11 = new Label();
+            Inf_safe_Line_tb = new TextBox();
+            label10 = new Label();
+            VSL_tb = new TextBox();
+            MaxStrips_lbl = new Label();
+            label20 = new Label();
+            minStrips_lbl = new Label();
+            label13 = new Label();
+            stripAlert_lbl = new Label();
+            label21 = new Label();
+            Assumedstrip_lbl = new TextBox();
+            strips_panel = new Panel();
+            striptoStrip_lbl = new Label();
+            label12 = new Label();
+            button1 = new Button();
+            timer1 = new System.Windows.Forms.Timer(components);
+            toasterTimer = new System.Windows.Forms.Timer(components);
+            panel2 = new Panel();
+            arms_dropdown = new ComboBox();
+            label33 = new Label();
             panel3.SuspendLayout();
             Resul_panel.SuspendLayout();
             panel8.SuspendLayout();
@@ -87,8 +111,10 @@ namespace DesktopApp.UserControls
             panel6.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
-            panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
+            panel9.SuspendLayout();
+            strips_panel.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -200,9 +226,9 @@ namespace DesktopApp.UserControls
             label9.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
             label9.Location = new Point(3, 105);
             label9.Name = "label9";
-            label9.Size = new Size(87, 19);
+            label9.Size = new Size(85, 19);
             label9.TabIndex = 14;
-            label9.Text = "M-16 Grag";
+            label9.Text = "M-16 Frag";
             // 
             // panel3
             // 
@@ -212,7 +238,7 @@ namespace DesktopApp.UserControls
             panel3.Location = new Point(3, 0);
             panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1309, 45);
+            panel3.Size = new Size(1313, 45);
             panel3.TabIndex = 27;
             // 
             // label14
@@ -220,7 +246,7 @@ namespace DesktopApp.UserControls
             label14.AutoSize = true;
             label14.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label14.ForeColor = Color.White;
-            label14.Location = new Point(3, 16);
+            label14.Location = new Point(3, 8);
             label14.Name = "label14";
             label14.Size = new Size(93, 29);
             label14.TabIndex = 28;
@@ -270,7 +296,7 @@ namespace DesktopApp.UserControls
             // 
             Anti_Tank_Mines_lbl.AutoSize = true;
             Anti_Tank_Mines_lbl.Font = new Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            Anti_Tank_Mines_lbl.Location = new Point(142, 41);
+            Anti_Tank_Mines_lbl.Location = new Point(142, 77);
             Anti_Tank_Mines_lbl.Name = "Anti_Tank_Mines_lbl";
             Anti_Tank_Mines_lbl.Size = new Size(103, 19);
             Anti_Tank_Mines_lbl.TabIndex = 32;
@@ -280,7 +306,7 @@ namespace DesktopApp.UserControls
             // 
             Anit_Pers_Mines_Lbl.AutoSize = true;
             Anit_Pers_Mines_Lbl.Font = new Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            Anit_Pers_Mines_Lbl.Location = new Point(142, 77);
+            Anit_Pers_Mines_Lbl.Location = new Point(142, 40);
             Anit_Pers_Mines_Lbl.Name = "Anit_Pers_Mines_Lbl";
             Anit_Pers_Mines_Lbl.Size = new Size(103, 19);
             Anit_Pers_Mines_Lbl.TabIndex = 33;
@@ -328,17 +354,17 @@ namespace DesktopApp.UserControls
             // 
             // Resul_panel
             // 
-            Resul_panel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Resul_panel.BackColor = Color.WhiteSmoke;
+            Resul_panel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            Resul_panel.BackColor = Color.Transparent;
             Resul_panel.Controls.Add(panel8);
             Resul_panel.Controls.Add(panel7);
             Resul_panel.Controls.Add(panel6);
             Resul_panel.Controls.Add(panel4);
             Resul_panel.Controls.Add(panel3);
-            Resul_panel.Location = new Point(0, 313);
+            Resul_panel.Location = new Point(0, 332);
             Resul_panel.Margin = new Padding(3, 4, 3, 4);
             Resul_panel.Name = "Resul_panel";
-            Resul_panel.Size = new Size(1315, 479);
+            Resul_panel.Size = new Size(1319, 464);
             Resul_panel.TabIndex = 42;
             Resul_panel.Visible = false;
             // 
@@ -394,9 +420,9 @@ namespace DesktopApp.UserControls
             label30.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
             label30.Location = new Point(8, 108);
             label30.Name = "label30";
-            label30.Size = new Size(126, 19);
+            label30.Size = new Size(176, 19);
             label30.TabIndex = 31;
-            label30.Text = "MLPs Required:";
+            label30.Text = "MLPs Nights Required:";
             // 
             // panel7
             // 
@@ -573,45 +599,254 @@ namespace DesktopApp.UserControls
             panel5.Size = new Size(282, 148);
             panel5.TabIndex = 43;
             // 
-            // Rate_of_Laying_tb
+            // errorProvider
             // 
-            Rate_of_Laying_tb.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            Rate_of_Laying_tb.Location = new Point(121, 33);
-            Rate_of_Laying_tb.Name = "Rate_of_Laying_tb";
-            Rate_of_Laying_tb.Size = new Size(147, 30);
-            Rate_of_Laying_tb.TabIndex = 6;
-            Rate_of_Laying_tb.Text = "700";
-            Rate_of_Laying_tb.TextChanged += Rate_of_Laying_tb_TextChanged;
+            errorProvider.ContainerControl = this;
             // 
             // label22
             // 
             label22.AutoSize = true;
             label22.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label22.Location = new Point(3, 39);
+            label22.Location = new Point(3, 37);
             label22.Name = "label22";
-            label22.Size = new Size(123, 19);
+            label22.Size = new Size(40, 19);
             label22.TabIndex = 5;
-            label22.Text = "Rate Of Laying ";
+            label22.Text = "VSL";
+            label22.TextAlign = ContentAlignment.TopCenter;
             // 
             // panel9
             // 
+            panel9.Controls.Add(Depth_tb);
+            panel9.Controls.Add(label11);
+            panel9.Controls.Add(Inf_safe_Line_tb);
+            panel9.Controls.Add(label10);
+            panel9.Controls.Add(VSL_tb);
             panel9.Controls.Add(label22);
-            panel9.Controls.Add(Rate_of_Laying_tb);
-            panel9.Location = new Point(385, 77);
+            panel9.Location = new Point(386, 77);
             panel9.Margin = new Padding(3, 4, 3, 4);
             panel9.Name = "panel9";
             panel9.Size = new Size(282, 148);
             panel9.TabIndex = 44;
             // 
-            // errorProvider
+            // Depth_tb
             // 
-            errorProvider.ContainerControl = this;
+            Depth_tb.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            Depth_tb.Location = new Point(122, 101);
+            Depth_tb.Name = "Depth_tb";
+            Depth_tb.Size = new Size(147, 30);
+            Depth_tb.TabIndex = 15;
+            Depth_tb.TextChanged += Depth_tb_TextChanged;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.Location = new Point(3, 112);
+            label11.Name = "label11";
+            label11.Size = new Size(52, 19);
+            label11.TabIndex = 14;
+            label11.Text = "Depth";
+            label11.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // Inf_safe_Line_tb
+            // 
+            Inf_safe_Line_tb.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            Inf_safe_Line_tb.Location = new Point(122, 66);
+            Inf_safe_Line_tb.Name = "Inf_safe_Line_tb";
+            Inf_safe_Line_tb.Size = new Size(147, 30);
+            Inf_safe_Line_tb.TabIndex = 13;
+            Inf_safe_Line_tb.TextChanged += Inf_safe_Line_tb_TextChanged;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Location = new Point(3, 72);
+            label10.Name = "label10";
+            label10.Size = new Size(110, 19);
+            label10.TabIndex = 12;
+            label10.Text = "INF Safe Line";
+            label10.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // VSL_tb
+            // 
+            VSL_tb.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            VSL_tb.Location = new Point(122, 31);
+            VSL_tb.Name = "VSL_tb";
+            VSL_tb.Size = new Size(147, 30);
+            VSL_tb.TabIndex = 11;
+            VSL_tb.TextChanged += VSL_tb_TextChanged;
+            // 
+            // MaxStrips_lbl
+            // 
+            MaxStrips_lbl.AutoSize = true;
+            MaxStrips_lbl.Font = new Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            MaxStrips_lbl.Location = new Point(135, 48);
+            MaxStrips_lbl.Name = "MaxStrips_lbl";
+            MaxStrips_lbl.Size = new Size(103, 19);
+            MaxStrips_lbl.TabIndex = 40;
+            MaxStrips_lbl.Text = "PlaceHolder";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label20.Location = new Point(8, 48);
+            label20.Name = "label20";
+            label20.Size = new Size(124, 19);
+            label20.TabIndex = 39;
+            label20.Text = "Maximum Strips";
+            label20.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // minStrips_lbl
+            // 
+            minStrips_lbl.AutoSize = true;
+            minStrips_lbl.Font = new Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            minStrips_lbl.Location = new Point(135, 29);
+            minStrips_lbl.Name = "minStrips_lbl";
+            minStrips_lbl.Size = new Size(103, 19);
+            minStrips_lbl.TabIndex = 38;
+            minStrips_lbl.Text = "PlaceHolder";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.Location = new Point(8, 29);
+            label13.Name = "label13";
+            label13.Size = new Size(121, 19);
+            label13.TabIndex = 6;
+            label13.Text = "Minimum Strips";
+            label13.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // stripAlert_lbl
+            // 
+            stripAlert_lbl.AutoSize = true;
+            stripAlert_lbl.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            stripAlert_lbl.ForeColor = Color.Red;
+            stripAlert_lbl.Location = new Point(6, 0);
+            stripAlert_lbl.Name = "stripAlert_lbl";
+            stripAlert_lbl.Size = new Size(1078, 19);
+            stripAlert_lbl.TabIndex = 41;
+            stripAlert_lbl.Text = "Please change the strip as per your requirement. Please make sure the strip to strip distance can't be less than 25 and greater than 150 ";
+            stripAlert_lbl.TextAlign = ContentAlignment.TopCenter;
+            stripAlert_lbl.Visible = false;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label21.Location = new Point(402, 63);
+            label21.Name = "label21";
+            label21.Size = new Size(51, 19);
+            label21.TabIndex = 46;
+            label21.Text = "Strips";
+            label21.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // Assumedstrip_lbl
+            // 
+            Assumedstrip_lbl.Location = new Point(483, 59);
+            Assumedstrip_lbl.Name = "Assumedstrip_lbl";
+            Assumedstrip_lbl.Size = new Size(170, 27);
+            Assumedstrip_lbl.TabIndex = 47;
+            // 
+            // strips_panel
+            // 
+            strips_panel.BorderStyle = BorderStyle.FixedSingle;
+            strips_panel.Controls.Add(striptoStrip_lbl);
+            strips_panel.Controls.Add(label12);
+            strips_panel.Controls.Add(button1);
+            strips_panel.Controls.Add(MaxStrips_lbl);
+            strips_panel.Controls.Add(stripAlert_lbl);
+            strips_panel.Controls.Add(label20);
+            strips_panel.Controls.Add(Assumedstrip_lbl);
+            strips_panel.Controls.Add(minStrips_lbl);
+            strips_panel.Controls.Add(label21);
+            strips_panel.Controls.Add(label13);
+            strips_panel.Location = new Point(3, 224);
+            strips_panel.Name = "strips_panel";
+            strips_panel.Size = new Size(1251, 101);
+            strips_panel.TabIndex = 48;
+            strips_panel.Visible = false;
+            // 
+            // striptoStrip_lbl
+            // 
+            striptoStrip_lbl.AutoSize = true;
+            striptoStrip_lbl.Font = new Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            striptoStrip_lbl.ForeColor = Color.DarkRed;
+            striptoStrip_lbl.Location = new Point(182, 71);
+            striptoStrip_lbl.Name = "striptoStrip_lbl";
+            striptoStrip_lbl.Size = new Size(103, 19);
+            striptoStrip_lbl.TabIndex = 50;
+            striptoStrip_lbl.Text = "PlaceHolder";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Location = new Point(8, 71);
+            label12.Name = "label12";
+            label12.Size = new Size(168, 19);
+            label12.TabIndex = 49;
+            label12.Text = "Strip to strip distance ";
+            label12.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.ActiveCaption;
+            button1.Location = new Point(675, 58);
+            button1.Name = "button1";
+            button1.Size = new Size(112, 29);
+            button1.TabIndex = 48;
+            button1.Text = "Re-calculate";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(arms_dropdown);
+            panel2.Controls.Add(label33);
+            panel2.Location = new Point(703, 77);
+            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(282, 115);
+            panel2.TabIndex = 45;
+            // 
+            // arms_dropdown
+            // 
+            arms_dropdown.DropDownStyle = ComboBoxStyle.DropDownList;
+            arms_dropdown.FormattingEnabled = true;
+            dropDownModel1.Label = "Infantry";
+            dropDownModel1.Value = 500;
+            dropDownModel2.Label = "Engineer";
+            dropDownModel2.Value = 700;
+            dropDownModel3.Label = "PMF";
+            dropDownModel3.Value = 350;
+            arms_dropdown.Items.AddRange(new object[] { dropDownModel1, dropDownModel2, dropDownModel3 });
+            arms_dropdown.Location = new Point(119, 35);
+            arms_dropdown.Name = "arms_dropdown";
+            arms_dropdown.Size = new Size(151, 28);
+            arms_dropdown.TabIndex = 12;
+            arms_dropdown.SelectionChangeCommitted += ArmsChanged;
+            // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label33.Location = new Point(56, 42);
+            label33.Name = "label33";
+            label33.Size = new Size(47, 19);
+            label33.TabIndex = 5;
+            label33.Text = "Arms";
+            label33.TextAlign = ContentAlignment.TopCenter;
             // 
             // MineCalculationControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Controls.Add(panel2);
+            Controls.Add(strips_panel);
             Controls.Add(Resul_panel);
             Controls.Add(panel9);
             Controls.Add(label1);
@@ -633,9 +868,13 @@ namespace DesktopApp.UserControls
             panel4.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
+            strips_panel.ResumeLayout(false);
+            strips_panel.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -687,9 +926,31 @@ namespace DesktopApp.UserControls
         private Label label24;
         private Label label25;
         private Label label30;
-        private TextBox Rate_of_Laying_tb;
-        private Label label22;
-        private Panel panel9;
         private ErrorProvider errorProvider;
+        private Panel panel9;
+        private TextBox VSL_tb;
+        private Label label22;
+        private TextBox Depth_tb;
+        private Label label11;
+        private TextBox Inf_safe_Line_tb;
+        private Label label10;
+        private Label label20;
+        private Label minStrips_lbl;
+        private Label label13;
+        private Label MaxStrips_lbl;
+        private Label label21;
+        private Label stripAlert_lbl;
+        private TextBox Assumedstrip_lbl;
+        private Panel strips_panel;
+        private Button button1;
+        private Label striptoStrip_lbl;
+        private Label label12;
+        private Panel panel1;
+        private Label label19;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer toasterTimer;
+        private Panel panel2;
+        private ComboBox arms_dropdown;
+        private Label label33;
     }
 }
